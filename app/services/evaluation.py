@@ -13,7 +13,6 @@ class Evaluation:
     def evaluate(dataset: Dataset) -> dict:
         try:
             results = evaluate(dataset)
-            logger.info(results)
         except Exception as e:
             logger.error(e)
         return results
