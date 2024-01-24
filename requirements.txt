@@ -1,0 +1,7 @@
+datasets==2.16.1
+pandas==2.2.0
+pydantic==2.5.3
+pydantic_settings==2.1.0
+ragas==0.0.23.dev53+g8969173
+ragas.egg==info
+SQLAlchemy==2.0.25
