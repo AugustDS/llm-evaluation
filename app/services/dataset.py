@@ -1,8 +1,7 @@
 from app.core.config import Config
 from datasets import Dataset
 from app.sql.operations import SqlOperations
-from app.sql.models import DbSqEvaluation, DbTestStandardQuestionsAnswers
-from app.models.dataframe import DataFrameModel
+from app.sql.models import DbSampleQATable, DbSampleEvalTable
 from core.logging import CustomLogger
 import pandas as pd
 
@@ -15,9 +14,9 @@ class DataSet:
     def build_dataset(user_id: str, project_id: str = "") -> Dataset:
         logger.log('info', f'Build evaluation dataset for user_id {user_id}')
         df_ground_truth = SqlOperations.get_dataframe(
-            DbSqEvaluation)
+            DbSampleEvalTable)
         df_question_answers = SqlOperations.get_dataframe(
-            DbTestStandardQuestionsAnswers)
+            DbSampleQATable)
         df_ground_truth = df_ground_truth[df_ground_truth["user_id"] == user_id][[
             "ground_truths", "question_id"]]
         df_question_answers = df_question_answers[df_question_answers["user_id"] == user_id][[
