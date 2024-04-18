@@ -1,13 +1,10 @@
 # llm-evaluation
-
-### UNTESTED RIGHT NOW!
+Very basic offline LLM evaluation with ragas from retool database tables.
 
 ### To-Dos:
 - Write unit tests.
-- Add `contexts` column to `standard_questions_answers` database as `List[str]` not best-practice but fast. Else store context with `question_id` and `project_id` in new database.
-- Add `ground_truths` to `sq_evaluation` database according to `question_id`.
-- Run evaluation pipeline on demo project.
-- Clean-up databases in general to simplify evaluation and production flows.
+- Add `contexts` column to `standard_questions_answers` database as `List[str]` or store context with `question_id` and `project_id` in new database.
+- Customize tables as needed.
 
 
 ### Metrics overview:
